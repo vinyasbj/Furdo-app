@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Furdo</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+ <style>
+ 	.nav-tabs li a {
+    color: #777;
+ }
+  .navbar {
+    margin-bottom: 0;
+    background-color: transparent;
+    border: 0;
+    font-size: 11px !important;
+    letter-spacing: 4px;
+    opacity:0.9;
+}
+
+/* Add a gray color to all navbar links */
+.navbar li a, .navbar .navbar-brand { 
+    color: #ff471a !important;
+}
+
+/* On hover, the links will turn white */
+.navbar-nav li a:hover {
+    color: #ff6666 !important;
+}
+
+/* The active link */
+.navbar-nav li.active a {
+    color: #fff !important;
+    background-color:#ff471a !important;
+}
+
+/* Remove border color from the collapsible button */
+.navbar-default .navbar-toggle {
+    border-color: transparent;
+}
+.carousel-inner img{
+  /*-webkit-filter:whitescale(90%);
+  filter:whitescale(90%);*/
+  width:100%;
+  margin:auto;
+  }
+  
+  .carousel-caption h3{
+  color: #fff !important;
+  }
+  
+  @media (max-width:600px){
+  .carousel-caption{
+  display:none;
+	/*}*/
+
+ </style>
+  <%= csrf_meta_tags %>
+
+</head>
+<body>
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#">FURDO</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <%= raw(controller.controller_name == "themes" ? "<li class='active'>" : "<li>") %>
+	    <%= link_to("THEMES", themes_path) %></li>
+        <li><a href="#">RECENT PROJECTS</a></li>
+        <li><a href="#">TESTIMONIALS</a></li>
+        <li><a href="#">DESIGNERS</a></li>
+        <li><a href="#">HOW IT WORKS</a></li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">MORE
+          <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">CONTACTS</a></li>
+            <li><a href="#">FACEBOOK</a></li>
+            <li><a href="#">TWITTER</a></li> 
+          </ul>
+        </li>
+        <li><a href="#"><span class="glyphicon glyphicon-search"></span></a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="carousel-inner" role="listbox">
+	<div class="item active">
+		<img src="http://furdo-s3-prod.s3.amazonaws.com/portal_assets/orders/R107442791/stages/304/original/4_3e71c5df14006ad6755d6a4e038812005d70356a.jpg" alt="New Design" >
+		<div class="carousel-caption">
+			<h3>New Design</h3>
+		</div>
+	</div>
+<%= yield %>
+</body>
+</html>

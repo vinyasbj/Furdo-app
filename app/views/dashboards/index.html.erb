@@ -1,0 +1,35 @@
+
+<!-- <div class="container">
+<h1 ><center style=" padding-bottom: 50px ;"> DESIGN THEMES</center></h1>
+
+		<div class="row">
+	<% @themes.each do |theme| %>
+			<div class="col-lg-6">
+		        <%#= theme.name %>
+		        <%= image_tag theme.image %><br>
+		        <%= link_to 'Show', theme %>
+		        <%= link_to 'Edit', edit_theme_path(theme) %>
+		        <%= link_to 'Destroy', theme, method: :delete, data: { confirm: 'Are you sure?' } %>
+			</div>
+	    	<% end %>
+		</div>
+</div>
+ -->
+<div class="container">
+	<h3 class="text-center" style="color:#ff471a;">DESIGN THEMES</h3>
+	<p class="text-center">
+		When you choose an interior design theme from here,<br> not only are you are telling us ​what tastes, colours and preferences move you.<br> You are also giving yourself a fantastic head start on the journey of turning your house into a 'home'
+	</p>
+	<div class="row text-center">
+	<% @themes.each do |theme| %>
+	<div class="col-sm-6">
+		<div class="thumbnail">
+			<%= image_tag theme.image %>
+			<p><strong>New Designs</strong></p>
+			<p><%= theme.created_at %></p>
+			<%= link_to theme.name, theme, class: "btn btn-default" %>
+		</div>
+	</div>
+	<% end %>
+  </div>
+</div>
